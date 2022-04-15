@@ -1,9 +1,10 @@
-FROM quay.io/lyfe00011/test:beta
+FROM fusuf/whatsasena:latest
 
-RUN git clone https://github.com/nabuhandbz/Pinky /root/WhatsAsenaDuplicated
-WORKDIR /root/WhatsAsenaDuplicated/
-RUN yarn install --no-audit
-RUN git clone https://github.com/nabuhandbz/uploads
-RUN cp -R /root/Utils/* /root/WhatsAsenaDuplicated 
+RUN git clone https://github.com/nabuhandbz/RubyMowl /root/WhatsAbu
+WORKDIR /root/WhatsAbu/
+ENV TZ=Asia/Kolkata
 RUN npm install supervisor -g
+RUN yarn install --no-audit
+RUN git clone https://github.com/nabuhandbz/mode
+
 CMD ["node", "bot.js"]
